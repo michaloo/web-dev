@@ -1,8 +1,0 @@
-<VirtualHost *:80>
-    DocumentRoot /app/public
-    ServerName 127.0.0.1
-    SetEnv DEBUG true
-    <Directory /app/public>
-        AllowOverride All
-    </Directory>
-</VirtualHost>

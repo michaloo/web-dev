@@ -1,0 +1,19 @@
+containers:
+    webdev:
+        image: michaloo/webdev
+        dockerfile: .
+        run:
+            publish: ["80:80"]
+            volume: [".:/var/www/html"]
+            detach: true
+containers:
+    webdev_it:
+        image: michaloo/webdev
+        dockerfile: .
+        run:
+            publish: ["80:80"]
+            volume: [".:/var/www/html"]
+            interactive: true
+            tty: true
+            rm: true
+            cmd: ["-c", "bash"]
