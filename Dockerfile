@@ -33,4 +33,6 @@ EXPOSE 80
 
 ENTRYPOINT [ "/bin/bash" ]
 
-CMD ["-c", "source /etc/apache2/envvars && exec /usr/sbin/apache2 -DFOREGROUND"]
+CMD [ "/start.sh" ]
+
+ADD ./start.sh /start.sh
