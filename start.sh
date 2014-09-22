@@ -6,6 +6,9 @@ sed -i \
     -e 's/CustomLog.*/CustomLog \/dev\/stdout combined/' \
     /etc/apache2/sites-available/000-default.conf
 
+sed -i \
+    -e 's/AllowOverride None/AllowOverride All/' \
+    /etc/apache2/apache2.conf
 
 sed -i \
     -e 's/log_errors = On/log_errors = Off/' \
