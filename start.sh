@@ -13,6 +13,9 @@ sed -i \
     -e 's/display_startup_errors = Off/display_startup_errors = On/' \
     /etc/php5/apache2/php.ini
 
+# enable mcrypt
+ln -fs ../../mods-available/mcrypt.ini /etc/php5/apache2/conf.d/20-mcrypt.ini
+ln -fs ../../mods-available/mcrypt.ini /etc/php5/cli/conf.d/20-mcrypt.ini
 
 source /etc/apache2/envvars
 
