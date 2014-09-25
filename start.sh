@@ -20,6 +20,9 @@ sed -i \
 ln -fs ../../mods-available/mcrypt.ini /etc/php5/apache2/conf.d/20-mcrypt.ini
 ln -fs ../../mods-available/mcrypt.ini /etc/php5/cli/conf.d/20-mcrypt.ini
 
+# make sure that file permissions are ok
+chown www-data:www-data -R /var/www/*
+
 source /etc/apache2/envvars
 
 set -m
