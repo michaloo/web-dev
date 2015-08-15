@@ -6,7 +6,8 @@ FROM michaloo/node-dev
 
 MAINTAINER Michal Raczka me@michaloo.net
 
-RUN apt-get update -y \
+RUN rm /etc/apt/sources.list.d/proposed.list \
+    && apt-get update -y \
     && apt-get install -y git
 
 RUN apt-get install -y apache2
