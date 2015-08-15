@@ -11,7 +11,8 @@ RUN apt-get update -y \
 
 RUN apt-get install -y apache2
 
-RUN apt-get install -y php5-cli php5-gd php5-mysql php5-mcrypt libapache2-mod-php5
+RUN apt-get install -y \
+    php5-cli php5-gd php5-mysql php5-mcrypt php5-curl libapache2-mod-php5
 
 RUN curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer
@@ -23,6 +24,8 @@ RUN a2enmod rewrite
 
 RUN ln -s ../../mods-available/mcrypt.ini /etc/php5/cli/conf.d/20-mcrypt.ini \
     && ln -s ../../mods-available/mcrypt.ini /etc/php5/apache2/conf.d/20-mcrypt.ini
+
+RUN apt-get install -y mysql-client
 
 EXPOSE 80
 
