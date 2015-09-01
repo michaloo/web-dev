@@ -6,7 +6,7 @@ FROM michaloo/node-dev
 
 MAINTAINER Michal Raczka me@michaloo.net
 
-RUN rm /etc/apt/sources.list.d/proposed.list \
+RUN rm -f /etc/apt/sources.list.d/proposed.list \
     && apt-get update -y \
     && apt-get install -y git
 
